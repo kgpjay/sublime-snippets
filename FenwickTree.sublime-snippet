@@ -1,0 +1,52 @@
+<snippet>
+	<content><![CDATA[
+class FenwickTree{
+public: 
+    int n; 
+    vector<int> bit;  //Binary indexed tree 
+
+    FenwickTree(int n){  // empty tree constructor
+        this->n = n; 
+        bit.assign(n, 0); 
+    }
+
+    /*FenwickTree(vector<int>&a) : FenwickTree(a.size()){  //O(NlogN) constructor 
+        for(size_t i=0 ; i<a.size() ; i++){
+            add(i, a[i]); 
+        }
+    }*/
+
+    FenwickTree(vector<int> &a) : FenwickTree(a.size()){  //O(N) constructor
+        for(size_t i=0 ; i<a.size() ; i++){
+            bit[i] += a[i]; 
+            int r = i|(i+1); 
+            if(r<n) bit[r] += bit[i]; 
+        }
+    }
+
+    int sum(int r){   // sum[0, r]
+        int ans=0; 
+        for(; r>=0 ; r = (r&(r+1))-1){
+            ans += bit[r]; 
+        }
+        return ans; 
+    }
+
+    int sum(int l, int r){  //sum[l, r]
+        return sum(r)-sum(l-1); 
+    }
+
+    void add(int idx, int del){   //a[idx]+=del, then update BIT
+        for(int i=idx ; i<n ; i = i|(i+1)){
+            bit[i] += del;
+        }
+    }
+}; 
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fenwicktree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

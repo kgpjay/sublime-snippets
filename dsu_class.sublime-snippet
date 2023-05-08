@@ -1,0 +1,51 @@
+<snippet>
+	<content><![CDATA[
+class DSU{
+	public:
+
+	int n; // max number of nodes
+	int comp; //total nnumber of components 
+	vector<int> parent; //stores parent of a node 
+	vector<int> size;  //number of nodes in a set of node i 
+
+	//constructor 
+	DSU(int x){
+		n = x;
+		parent.assign(n+1, -1); 
+		size.assign(n+1, 0); 
+
+		for(int i=0 ; i<=n ; i++){
+			make_set(i); 
+		}
+		comp = n; 
+	}
+
+	void make_set(int v){
+		parent[v] = v; 
+		size[v] =1;
+	}
+
+	int find_set(int v){
+		if(parent[v]==v) return v;
+		return parent[v] = find_set(parent[v]);  //path compression 
+	}
+
+	void union_sets(int u, int v){
+		u = find_set(u);
+		v = find_set(v); 
+
+		if(u==v) return; 
+
+		if(size[u]>size[v]) swap(u, v);  //size compression 
+		parent[u] = v;
+		size[v] += size[u]; 
+		comp--; 
+	}
+};
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dsu</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

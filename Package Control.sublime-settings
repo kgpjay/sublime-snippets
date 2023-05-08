@@ -1,0 +1,18 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Debugger",
+		"LSP",
+		"Monokai++",
+		"Package Control",
+		"Sync Settings",
+		"Terminus",
+		"Theme - Monokai Pro",
+	],
+	"debug": true,
+	// "font_face": "Roboto `Mono", 
+}

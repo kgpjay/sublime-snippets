@@ -1,0 +1,55 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+
+using namespace std;
+typedef long long int ll; 
+#define int ll 
+#define IOS ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define mp make_pair
+#define pb push_back
+#define llM LONG_LONG_MAX 
+#define llm LONG_LONG_MIN
+#define all(x) (x).begin(), (x).end() 
+#define endl "\n"
+#define file freopen("input.txt", "r", stdin), freopen("output.txt", "w", stdout)
+
+template<typename T> 
+ostream& operator<<(ostream& COUT, vector<T>& v){ for(int i=0 ; i<v.size() ; i++){ COUT<<v[i]<<" "; } COUT << endl; return COUT; }
+template<typename T> 
+ostream& operator<<(ostream& COUT, pair<T, T>& p){ cout << p.first <<" "<< p.second <<endl; return COUT; }
+template<typename T> 
+istream& operator>>(istream& CIN, vector<T>& a){ for(int i=0 ; i<a.size() ; i++) CIN>>a[i]; return CIN; }
+template<typename T> 
+istream& operator>>(istream& CIN, pair<T, T>& p){ cin >> p.first >> p.second ; return CIN; }
+template<typename T>
+T max(vector<T>& v){ T m=v[0]; for(auto e : v){ m = max(m, e); } return m; }
+
+
+ll mod = 1000000007;
+
+
+
+void solve(){
+    $0
+}
+
+signed main()
+{
+    //IOS
+    //file;
+    int T=1;
+    cin >> T;
+    for (int i = 0; i < T; ++i){
+        // cout<<"Case #"<<i+1<<": ";
+        solve(); 
+    }
+    $1
+
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cptemplate</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
